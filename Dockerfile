@@ -1,11 +1,5 @@
-FROM golang
+FROM scratch
 
-RUN mkdir /app
+COPY goss /goss
 
-ADD ./src/ /app/
-
-WORKDIR /app
-
-RUN go build -o goss .
-
-CMD ["/app/goss"]
+CMD ["/goss"]
